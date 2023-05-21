@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;1,100&family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;1,100&family=League+Spartan:wght@400;500&family=Mate+SC&display=swap" rel="stylesheet">
+    <title>Unit Converter</title>
+    <style type="text/css">
+        h1{
+            font-family: mate SC;
+            color: white;
+        }
+        a{
+            font-family: tilt warp;
+        }
+        h2{
+            font-size: 45px;
+            font-family: mate SC;
+        }
+        
+        input{
+              border: 1px solid black;
+              border-radius: 10px;
+        }
+        select{
+              border: 1px solid black;
+              border-radius: 10px;
+        }
+        body{
+            background: url(bgyes.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        table{
+            background: url(bgyes3.jpg);
+        }
+    </style>
+    <script>
+        function convertLength() {
+            var millimeters = parseFloat(document.getElementById("millimeters").value);
+            var unit = document.getElementById("unit").value;
+            var result;
+
+            if (unit === "centimeters") {
+                result = (millimeters / 10).toFixed(10);
+            } else if (unit === "meters") {
+                result = (millimeters / 1000).toFixed(10);
+            } else if (unit === "kilometers") {
+                result = (millimeters / 1000000).toFixed(10);
+            } else {
+                result = 0;
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+       
+        <br>
+        <center><h1 style="color: black;">Conversion Guide</h1></center>
+          <center><table class="table table-striped table-hover">
+    <thread>
+   <tbody>
+      <tr>
+        <br>
+        <th scope="col" >Milimeter (mm) </th>
+        <th scope="col">Conversions (cm/m/km)</th>
+     </tr>
+
+    <tr>
+     <td>10 mm</td>
+     <td>1 cm</td>
+   </tr>  
+    <tr>
+     <td>1000 mm</td>
+     <td>1 m</td>
+   </tr> 
+    <tr>
+     <td>1000000 mm</td>
+     <td>1 km</td>
+   </tr> 
+   </tbody>
+</table> 
+  </thread>
+    </div>
+    <br>
+</table>
+</center>
+<center><h3 style="font-family: mate SC;">Conversion Calculator</h3></center>
+<hr><hr><hr>
+    <div class="container" align="center">
+    <br>
+    <h2>Unit Converter</h2>
+    <br>
+    <label for="millimeters" style="font-size: 25px; font-family: mate SC;">Millimeters:</label>
+    <input type="number" placeholder="Enter value" id="millimeters" style="font-family: league spartan;font-size: 15px; padding:13px; width: 255px;" />
+
+    <label for="unit" style="font-size: 25px;font-family: mate SC;">Convert to:</label>
+    <select id="unit" style="padding: 15px; width: 255px;font-family: league spartan;">
+        <option value="centimeters" style="font-size:20px;font-family: league spartan; ">Centimeters</option>
+        <option value="meters" style="font-size:20px;font-family: league spartan;">Meters</option>
+        <option value="kilometers" style="font-size:20px; font-family: league spartan; ">Kilometers</option>
+    </select>
+    <div class="container">
+        <br>
+    <button type="button" class="btn btn-info" onclick="convertLength()" style="font-size:24px; font-family: league spartan;">Submit</button>
+    </div>
+    <br>
+    <h1 style="font-size: 40px;">RESULTS:</h1>
+    <h1 style="font-size: 50px; color: white;"><p id="result"></p></h1>
+    </div>
+    <br>
+    
+    <br>
+    <br>
+</body>
+</html>
